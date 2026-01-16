@@ -64,6 +64,7 @@ In any cell, type:
 
 ```text
 =CHECK_VAT_SERVICE("NL123456789B01")
+```
 
 ## Input format
 
@@ -79,6 +80,7 @@ NL123456789B01
 BE0123456789
 DE123456789
 FR12345678901
+```
 
 ## Output format
 
@@ -86,6 +88,7 @@ The function returns an array that expands into **5 columns** in Google Sheets:
 
 ```text
 [Request Date, Valid, Company Name, Address, Error Message]
+```
 
 ### Column details
 
