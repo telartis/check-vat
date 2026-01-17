@@ -8,17 +8,17 @@ This project provides a custom Google Apps Script function you can paste into a 
 
 ## ✨ Features
 
-- ✅ Validates EU VAT numbers using the official VIES database  
-- 📊 Works natively inside Google Sheets (Google Apps Script)  
-- 🔄 Supports validating many VAT numbers by filling formulas down  
-- 🧩 Returns structured results (date, valid/invalid, name, address, error)  
+- ✅ Validates EU VAT numbers using the official VIES database
+- 📊 Works natively inside Google Sheets (Google Apps Script)
+- 🔄 Supports validating many VAT numbers by filling formulas down
+- 🧩 Returns structured results (date, valid/invalid, name, address, error)
 - ⚡ Lightweight and easy to install
 
 ---
 
 ## 🔗 References
 
-- **WSDL:** `https://ec.europa.eu/taxation_customs/vies/services/checkVatService.wsdl`  
+- **WSDL:** `https://ec.europa.eu/taxation_customs/vies/services/checkVatService.wsdl`
 - **VIES FAQ:** `https://ec.europa.eu/taxation_customs/vies/faq.html`
 
 ---
@@ -29,8 +29,8 @@ This project provides a custom Google Apps Script function you can paste into a 
 Open the Google Sheet where you want to validate VAT numbers.
 
 ### Step 2: Access Apps Script Editor
-- Click **Extensions** in the menu bar  
-- Select **Apps Script**  
+- Click **Extensions** in the menu bar
+- Select **Apps Script**
 - The Apps Script editor opens in a new tab
 
 ### Step 3: Create / prepare a script file
@@ -107,8 +107,8 @@ The function returns an array that expands into **5 columns** in Google Sheets:
 | Column A     | Column B                     | Column C       | Column D | Column E        | Column F        |
 |--------------|------------------------------|----------------|----------|-----------------|-----------------|
 | VAT Number   | Formula                      | Request Date   | Valid    | Company Name    | Address         |
-| NL1234567…   | =CHECK_VAT_SERVICE(A2)        | 2015-03-09…    | true     | ACME CORP B.V.  | KERKSTRAAT…     |
-| BE0123456…   | =CHECK_VAT_SERVICE(A3)        | 2015-03-09…    | false    |                 | INVALID_INPUT   |
+| NL1234567…   | =CHECK_VAT_SERVICE(A2)       | 2015-03-09…    | true     | EXAMPLE B.V.    | DAMSTRAAT…     |
+| BE0123456…   | =CHECK_VAT_SERVICE(A3)       | 2015-03-09…    | false    |                 | INVALID_INPUT   |
 
 ### Notes
 
@@ -124,16 +124,16 @@ If a validation fails, the **Error Message** column will contain a descriptive m
 
 Common cases include:
 
-- **Network errors**  
+- **Network errors**
   `Network error: [message]`
 
-- **Invalid input format**  
+- **Invalid input format**
   `Invalid VAT number: too short`
 
-- **Service errors**  
+- **Service errors**
   `HTTP error 500: Service unavailable`
 
-- **Invalid VAT number**  
+- **Invalid VAT number**
   VIES may return codes such as `INVALID_INPUT` or similar
 
 If many rows fail at the same time, the VIES service may be temporarily unavailable.
