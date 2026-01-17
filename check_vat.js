@@ -66,17 +66,17 @@
  *
  *   Column A: Request Date (e.g., "2015-03-09+01:00")
  *   Column B: Valid (true/false)
- *   Column C: Company Name (e.g., "Acme Corp B.V.")
- *   Column D: Address (e.g., "KERKSTRAAT 00123\n1234AB AMSTERDAM")
+ *   Column C: Company Name (e.g., "Example B.V.")
+ *   Column D: Address (e.g., "DAMSTRAAT 00123\n1011AB AMSTERDAM")
  *   Column E: Error Message (empty if successful)
  *
  * Example Spreadsheet Layout:
  *
- *   |    A         |       B               |   C     |      D      |     E     |      F      |
- *   |--------------|-----------------------|---------|-------------|-----------|-------------|
- *   | VAT Number   | Formula               | Date    | Valid       | Name      | Address     |
- *   | NL1234567... | =CHECK_VAT_SERVICE(A2)| 2015... | true        | ACME COR..| KERKSTRA... |
- *   | BE0123456... | =CHECK_VAT_SERVICE(A3)| 2015... | false       |           | INVALID...  |
+ *   |    A         |       B               |   C     |      D      |     E      |      F      |
+ *   |--------------|-----------------------|---------|-------------|------------|-------------|
+ *   | VAT Number   | Formula               | Date    | Valid       | Name       | Address     |
+ *   | NL1234567... | =CHECK_VAT_SERVICE(A2)| 2015... | true        | EXAMPLE BV | DAMSTRAAT.. |
+ *   | BE0123456... | =CHECK_VAT_SERVICE(A3)| 2015... | false       |            | INVALID...  |
  *
  * Advanced Usage - Multiple VAT Numbers:
  *   1. Put VAT numbers in column A (starting row 2)
@@ -252,7 +252,7 @@ function CHECK_VAT_SERVICE(vat_number) {
 
 /**
  * EXAMPLE REQUEST/RESPONSE
- * Example VAT validation for Acme Corp B.V. (NL123456789B01)
+ * Example VAT validation for Example B.V. (NL123456789B01)
  *
  * Request Headers:
  * POST /taxation_customs/vies/services/checkVatService HTTP/1.1
@@ -291,10 +291,10 @@ function CHECK_VAT_SERVICE(vat_number) {
  *       <vatNumber>123456789B01</vatNumber>
  *       <requestDate>2015-03-09+01:00</requestDate>
  *       <valid>true</valid>
- *       <name>Acme Corp B.V.</name>
+ *       <name>Example B.V.</name>
  *       <address>
- *         KERKSTRAAT 001234
- *         1234AB AMSTERDAM
+ *         DAMSTRAAT 001234
+ *         1011AB AMSTERDAM
  *       </address>
  *     </checkVatResponse>
  *   </soap:Body>
@@ -306,8 +306,8 @@ function CHECK_VAT_SERVICE(vat_number) {
  *   "vatNumber"    => "123456789B01",
  *   "requestDate"  => "2015-03-09+01:00",
  *   "valid"        => true,
- *   "name"         => "Acme Corp B.V.",
- *   "address"      => "KERKSTRAAT 001234\n1234AB AMSTERDAM"
+ *   "name"         => "Example B.V.",
+ *   "address"      => "DAMSTRAAT 001234\n1011AB AMSTERDAM"
  * ]
  */
 
